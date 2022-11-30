@@ -5,9 +5,11 @@ import App from './App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import { fetchUsers } from './features/users/usersSlice';
+import { fetchPosts } from './features/posts/postSlice';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 store.dispatch(fetchUsers());
+store.dispatch(fetchPosts());
 
 ReactDOM.render(
 	<React.StrictMode>
