@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client'; //react v18
 import './index.css';
 import App from './App';
 import { store } from './app/store';
@@ -11,7 +11,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 store.dispatch(fetchUsers());
 store.dispatch(fetchPosts());
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
 	<React.StrictMode>
 		<Provider store={store}>
 			<Router>
@@ -20,6 +21,5 @@ ReactDOM.render(
 				</Routes>
 			</Router>
 		</Provider>
-	</React.StrictMode>,
-	document.getElementById('root')
+	</React.StrictMode>
 );

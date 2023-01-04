@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectPostById } from './postSlice';
 
+//passed in postId not post for performance optimization
 const PostsExcerpt = ({ postId }) => {
 	const post = useSelector((state) => selectPostById(state, postId));
 	const state = useSelector((state) => state);
