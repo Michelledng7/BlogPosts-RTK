@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { selectUserById } from './usersSlice';
 import { Link, useParams } from 'react-router-dom';
-import { selectPostsByUser } from '../posts/postSlice';
+//import { selectPostsByUser } from '../posts/postSlice';
 
 const UserPage = () => {
 	const { userId } = useParams();
@@ -12,20 +12,18 @@ const UserPage = () => {
 	// );
 
 	//apply the memoized selector
-	const postsOfUser = useSelector((state) =>
-		selectPostsByUser(state, Number(userId))
-	);
-	console.log(postsOfUser);
-	const postTitles = postsOfUser.map((post) => (
-		<li key={post.id}>
-			<Link to={`/posts/${post.id}`}>{post.title}</Link>
-		</li>
-	));
+	// const postsOfUser = useSelector((state) =>
+	// 	selectPostsByUser(state, Number(userId))
+	// );
+	//console.log(postsOfUser);
+	// const postTitles = postsOfUser.map((post) => (
+	// 	<li key={post.id}>
+	// 		<Link to={`/posts/${post.id}`}>{post.title}</Link>
+	// 	</li>
+	// ));
 	return (
 		<section>
 			<h2>{user?.name}</h2>
-
-			<ol>{postTitles}</ol>
 		</section>
 	);
 };

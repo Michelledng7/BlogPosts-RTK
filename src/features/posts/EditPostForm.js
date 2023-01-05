@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectPostById, updatePost, deletePost } from './postSlice';
+import { selectPostById } from './postSlice';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import { selectAllUsers } from '../users/usersSlice';
@@ -38,15 +38,14 @@ const EditPostForm = () => {
 		if (canSave) {
 			try {
 				setRequestStatus('pending');
-				await dispatch(
-					updatePost({
-						id: Number(postId),
-						title,
-						body: content,
-						userId,
-						reactions: post.reactions,
-					})
-				).unwrap();
+				await dispatch().unwrap();
+				// updatePost({
+				// 	id: Number(postId),
+				// 	title,
+				// 	body: content,
+				// 	userId,
+				// 	reactions: post.reactions,
+				// })
 				setTitle('');
 				setContent('');
 				setUserId('');
@@ -62,7 +61,7 @@ const EditPostForm = () => {
 	const onDeletePostClicked = async () => {
 		try {
 			setRequestStatus('pending');
-			await dispatch(deletePost({ id: postId })).unwrap();
+			//await dispatch(deletePost({ id: postId })).unwrap();
 			setTitle('');
 			setContent('');
 			setUserId('');
