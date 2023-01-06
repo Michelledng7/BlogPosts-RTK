@@ -43,14 +43,56 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
 				...result.ids.map((id) => ({ type: 'Posts', id })),
 			],
 		}),
+		getPostsByUserId: builder.query({
+			query: (id) => `/posts?userId=${id}`,
+			transformResponse: (responseData) => {
+				let min = 1;
+				const loadedPosts = responseData.map((post) => {
+					if (!post?.date)
+						post.date = sub(new Date(), { minutes: min++ }).toISOString();
+					if (!post?.reactions)
+						post.reactions = {
+							thumbsUp: 0,
+							wow: 0,
+							heart: 0,
+							rocket: 0,
+							coffee: 0,
+						};
+					return post;
+				});
+				return postsAdapter.setAll(initialState, loadedPosts);
+			},
+			providesTags: (result, error, arg) => {
+				console.log(result);
+				return [...result.ids.map((id) => ({ type: 'Posts', id }))];
+			},
+		}),
+		addNewPost: builder.mutation({
+			query: (initialPost) => ({
+				url: '/posts',
+				method: 'POST',
+				body: {
+					...initialPost,
+					date: new Date().toISOString(),
+					userId: Number(initialPost.userId),
+					reactions: {
+						thumbsUp: 0,
+						wow: 0,
+						heart: 0,
+						rocket: 0,
+						coffee: 0,
+					},
+				},
+			}),
+			invalidatesTags: [{ type: 'Post', id: 'LIST' }],
+		}),
 	}),
 });
 
-export const { useGetPostsQuery } = extendedApiSlice;
+export const { useGetPostsQuery, useGetPostsByUserIdQuery, useAddNewPostMutation } = extendedApiSlice;
 
 //return the query result object
 export const selectPostsResult = extendedApiSlice.endpoints.getPosts.select();
-//creates memoized selector
 const selectPostsData = createSelector(
 	selectPostsResult,
 	(postsResult) => postsResult.data //normalized state object with ids and entities
@@ -62,5 +104,5 @@ export const {
 	selectById: selectPostById,
 	selectIds: selectPostIds,
 } = postsAdapter.getSelectors(
-	(state) => selectPostsResult(state) ?? initialState
+	(state) => selectPostsData(state) ?? initialState
 );

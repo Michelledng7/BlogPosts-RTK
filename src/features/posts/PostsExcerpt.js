@@ -9,8 +9,8 @@ import { selectPostById } from './postSlice';
 const PostsExcerpt = ({ postId }) => {
 	const post = useSelector((state) => selectPostById(state, postId));
 	const state = useSelector((state) => state);
-	console.log(state);
 	console.log(post);
+	console.log(state);
 	return (
 		<article>
 			<h3>{post.title}</h3>

@@ -6,7 +6,7 @@ import { useGetPostsQuery } from './postSlice';
 const PostsList = () => {
 	const { isLoading, isSuccess, isError, error } = useGetPostsQuery();
 	const orderedPostsIds = useSelector(selectPostIds);
-	//console.log(posts);
+	console.log(orderedPostsIds);
 
 	//const dispatch = useDispatch();
 
