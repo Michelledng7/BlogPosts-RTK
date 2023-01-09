@@ -1,21 +1,38 @@
-import { useSelector } from 'react-redux';
-import { selectAllUsers } from './usersSlice';
 import { Link } from 'react-router-dom';
+import { useGetUsersQuery } from './usersSlice';
 
 const UsersList = () => {
-	const users = useSelector(selectAllUsers);
+	const {
+		data: users,
+		isLoading,
+		isSuccess,
+		isError,
+		error,
+	} = useGetUsersQuery('getUsers');
+	//const users = useSelector(selectAllUsers); favour the RTK useGetUsersQuery hook
 	console.log(users);
-	const renderedUsers = users.map((user) => (
-		<li key={user.id}>
-			<Link to={`${user.id}`}>{user.name} </Link>
-		</li>
-	));
-	return (
-		<section>
-			<h2>Users</h2>
-			<ul>{renderedUsers}</ul>
-		</section>
-	);
+
+	let content;
+	if (isLoading) {
+		content = <p>'Loading'</p>;
+	} else if (isSuccess) {
+		const renderedUsers = users.ids.map((id) => (
+			<li key={id}>
+				<Link to={`/users/${id}`}>{users.entities[id].name}</Link>
+			</li>
+		));
+
+		content = (
+			<section>
+				<h2>Users</h2>
+				<ul>{renderedUsers}</ul>
+			</section>
+		);
+	} else if (isError) {
+		content = <p>{error}</p>;
+	}
+
+	return content;
 };
 
 export default UsersList;

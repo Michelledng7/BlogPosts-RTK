@@ -1,12 +1,49 @@
-import { useSelector } from 'react-redux';
-import { selectUserById } from './usersSlice';
 import { Link, useParams } from 'react-router-dom';
-//import { selectPostsByUser } from '../posts/postSlice';
+import { useGetPostsByUserIdQuery } from '../posts/postSlice';
+import { useGetUsersQuery } from './usersSlice';
 
 const UserPage = () => {
 	const { userId } = useParams();
-	const user = useSelector((state) => selectUserById(state, Number(userId))); //id from url parse to number
+
+	const {
+		user,
+		isLoading: isLoadingUsers,
+		isSuccess: isSuccessUsers,
+		isError: isErrorUsers,
+		error: errorUsers,
+	} = useGetUsersQuery('getUsers', {
+		selectFromResult: ({ data, isLoading, isSuccess, isError, error }) => ({
+			user: data?.entities[userId],
+			isLoading,
+			isSuccess,
+			isError,
+			error,
+		}),
+	});
 	console.log(user);
+
+	const {
+		data: postsOfUser,
+		isLoading,
+		isError,
+		error,
+		isSuccess,
+	} = useGetPostsByUserIdQuery(Number(userId));
+	console.log(postsOfUser);
+
+	let content;
+	if (isLoading) {
+		content = <p>Loading</p>;
+	} else if (isSuccess) {
+		content = postsOfUser.ids.map((id) => (
+			<li key={id}>
+				<Link to={`/posts/${id}`}>{postsOfUser.entities[id].title}</Link>
+			</li>
+		));
+	} else if (isError) {
+		content = <p>{error}</p>;
+	}
+	//Removes all instances of the Redux useSelector in favor of RTK useQuery hooks
 	// const postsOfUser = useSelector(selectAllPosts).filter(
 	// 	(post) => Number(post.userId) === Number(userId)
 	// );
@@ -23,7 +60,8 @@ const UserPage = () => {
 	// ));
 	return (
 		<section>
-			<h2>{user?.name}</h2>
+			<h2>Posts by {user.name}</h2>
+			{content}
 		</section>
 	);
 };

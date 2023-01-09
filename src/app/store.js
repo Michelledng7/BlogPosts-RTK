@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { apiSlice } from '../features/api/apiSlice';
-import usersReducer from '../features/users/usersSlice';
+//import usersReducer from '../features/users/usersSlice';
 
 export const store = configureStore({
 	reducer: {
 		[apiSlice.reducerPath]: apiSlice.reducer,
-		users: usersReducer,
+		//users: usersReducer,
 	},
 	middleware: (getDefaultMiddleware) =>
 		getDefaultMiddleware().concat(apiSlice.middleware), //this middleware manages cache lifetimes and expiration
