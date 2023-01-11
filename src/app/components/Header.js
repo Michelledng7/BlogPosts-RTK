@@ -10,10 +10,10 @@ const Header = () => {
 						<Link to='/'>Home</Link>
 					</li>
 					<li>
-						<Link to='posts'>Post</Link>
+						<Link to='post'>Post</Link>
 					</li>
 					<li>
-						<Link to='users'>User</Link>
+						<Link to='user'>User</Link>
 					</li>
 				</ul>
 			</nav>

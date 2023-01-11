@@ -10,7 +10,7 @@ import { extendedUsersApiSlice } from './features/users/usersSlice';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 //store.dispatch(fetchUsers());
-store.dispatch(extendedUsersApiSlice.endpoints.getUsers.initiate());
+store.dispatch(extendedUsersApiSlice.endpoints.getUsers.initiate()); //get posts at the upload time
 store.dispatch(extendedApiSlice.endpoints.getPosts.initiate());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

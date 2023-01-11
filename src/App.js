@@ -12,12 +12,12 @@ function App() {
 		<Routes>
 			<Route path='/' element={<Layout />}>
 				<Route index element={<PostsList />} />
-				<Route path='posts'>
+				<Route path='post'>
 					<Route index element={<AddPostForm />} />
 					<Route path=':postId' element={<SinglePostPage />} />
 					<Route path='edit/:postId' element={<EditPostForm />} />
 				</Route>
-				<Route path='users'>
+				<Route path='user'>
 					<Route index element={<UsersList />} />
 					<Route path=':userId' element={<UserPage />} />
 				</Route>

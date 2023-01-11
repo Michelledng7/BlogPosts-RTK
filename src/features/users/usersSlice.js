@@ -15,7 +15,7 @@ import { apiSlice } from '../api/apiSlice';
 // 	}
 // });
 //normolized state
-export const usersAdapter = createEntityAdapter({});
+export const usersAdapter = createEntityAdapter();
 const initialUserState = usersAdapter.getInitialState();
 
 export const extendedUsersApiSlice = apiSlice.injectEndpoints({

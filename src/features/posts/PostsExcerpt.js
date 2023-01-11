@@ -17,7 +17,7 @@ const PostsExcerpt = ({ postId }) => {
 			<p className='excerpt'>{post.body.substring(0, 70)}...</p>
 			<p className='postCredit'>
 				<p>
-					<Link to={`posts/${post.id}`}>View Post </Link>
+					<Link to={`post/${post.id}`}>View Post </Link>
 				</p>
 				<PostAuthor userId={post.userId} />
 				<TimeAgo timestamp={post.date} />

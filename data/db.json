@@ -282,21 +282,6 @@
       }
     },
     {
-      "id": 8,
-      "title": "Michelledolorem dolore est ipsam",
-      "body": "MMMM",
-      "userId": 1,
-      "reactions": {
-        "thumbsUp": 0,
-        "wow": 0,
-        "heart": 0,
-        "rocket": 0,
-        "coffee": 0
-      },
-      "date": "2023-01-07T12:56:06.223Z",
-      "userID": null
-    },
-    {
       "userId": 2,
       "id": 11,
       "title": "et ea vero quia laudantium autem",
@@ -866,20 +851,6 @@
       "id": 103
     },
     {
-      "title": "ssssss",
-      "body": "ssssss",
-      "userId": 1,
-      "date": "2023-01-06T13:07:53.996Z",
-      "reactions": {
-        "thumbsUp": 0,
-        "wow": 0,
-        "heart": 0,
-        "rocket": 0,
-        "coffee": 0
-      },
-      "id": 104
-    },
-    {
       "title": "async",
       "body": "await",
       "userId": 1,
@@ -892,20 +863,6 @@
         "coffee": 0
       },
       "id": 105
-    },
-    {
-      "title": "aaaaasync",
-      "body": "sdfdsfsdfsdf",
-      "userId": 1,
-      "date": "2023-01-06T13:57:20.151Z",
-      "reactions": {
-        "thumbsUp": 0,
-        "wow": 0,
-        "heart": 0,
-        "rocket": 0,
-        "coffee": 0
-      },
-      "id": 106
     },
     {
       "id": 107,
@@ -921,20 +878,6 @@
       },
       "date": "2023-01-07T07:29:52.816Z",
       "userID": null
-    },
-    {
-      "title": "cccccccccccc",
-      "body": "cccccccccccccc",
-      "userId": 1,
-      "date": "2023-01-07T12:46:14.245Z",
-      "reactions": {
-        "thumbsUp": 0,
-        "wow": 0,
-        "heart": 0,
-        "rocket": 0,
-        "coffee": 0
-      },
-      "id": 108
     }
   ]
 }

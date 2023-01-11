@@ -18,7 +18,7 @@ const UsersList = () => {
 	} else if (isSuccess) {
 		const renderedUsers = users.ids.map((id) => (
 			<li key={id}>
-				<Link to={`/users/${id}`}>{users.entities[id].name}</Link>
+				<Link to={`/user/${id}`}>{users.entities[id].name}</Link>
 			</li>
 		));
 
