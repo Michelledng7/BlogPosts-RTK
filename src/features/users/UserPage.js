@@ -60,7 +60,7 @@ const UserPage = () => {
 	// ));
 	return (
 		<section>
-			<h2>Posts by {user.name}</h2>
+			<h2>Posts by {user?.name}</h2>
 			{content}
 		</section>
 	);

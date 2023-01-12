@@ -283,12 +283,6 @@
     },
     {
       "userId": 2,
-      "id": 11,
-      "title": "et ea vero quia laudantium autem",
-      "body": "delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus\naccusamus in eum beatae sit\nvel qui neque voluptates ut commodi qui incidunt\nut animi commodi"
-    },
-    {
-      "userId": 2,
       "id": 12,
       "title": "in quibusdam tempore odit est dolorem",
       "body": "itaque id aut magnam\npraesentium quia et ea odit et ea voluptas et\nsapiente quia nihil amet occaecati quia id voluptatem\nincidunt ea est distinctio odio"
@@ -830,13 +824,6 @@
       "id": 101
     },
     {
-      "id": 102,
-      "title": "Checking",
-      "body": "check one two three",
-      "userId": 2,
-      "date": "2022-04-26T23:03:52.299Z"
-    },
-    {
       "title": "haha",
       "body": "faafafa",
       "userId": 1,
@@ -849,20 +836,6 @@
         "coffee": 0
       },
       "id": 103
-    },
-    {
-      "title": "async",
-      "body": "await",
-      "userId": 1,
-      "date": "2023-01-06T13:27:38.696Z",
-      "reactions": {
-        "thumbsUp": 0,
-        "wow": 0,
-        "heart": 0,
-        "rocket": 0,
-        "coffee": 0
-      },
-      "id": 105
     },
     {
       "id": 107,

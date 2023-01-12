@@ -84,7 +84,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
 					},
 				},
 			}),
-			invalidatesTags: [{ type: 'Post', id: 'LIST' }],
+			invalidatesTags: [{ type: 'Posts', id: 'LIST' }],
 		}),
 		updatePost: builder.mutation({
 			query: (updatedPost) => ({
@@ -106,7 +106,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
 			invalidatesTags: (result, error, arg) => {
 				console.log(result);
 				console.log(arg);
-				return [{ type: 'Post', id: arg.id }];
+				return [{ type: 'Posts', id: arg.id }];
 			},
 		}),
 		deletePost: builder.mutation({
@@ -115,7 +115,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
 				method: 'DELETE',
 				body: { id },
 			}),
-			invalidatesTags: (result, error, arg) => [{ type: 'Post', id: arg.id }],
+			invalidatesTags: (result, error, arg) => [{ type: 'Posts', id: arg.id }],
 		}),
 	}),
 });

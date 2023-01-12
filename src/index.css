@@ -28,7 +28,7 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	background-color: purple;
+	background-color: steelblue;
 	color: whitesmoke;
 	position: sticky;
 	top: 0;
