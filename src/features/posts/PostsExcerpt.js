@@ -8,13 +8,12 @@ import { selectPostById } from './postSlice';
 //passed in postId not post for performance optimization
 const PostsExcerpt = ({ postId }) => {
 	const post = useSelector((state) => selectPostById(state, postId));
-	const state = useSelector((state) => state);
 	console.log(post);
-	console.log(state);
+
 	return (
 		<article>
 			<h3>{post.title}</h3>
-			<p className='excerpt'>{post.body.substring(0, 70)}...</p>
+			<p className='excerpt'>{post.body}...</p>
 			<p className='postCredit'>
 				<p>
 					<Link to={`post/${post.id}`}>View Post </Link>

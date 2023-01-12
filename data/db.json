@@ -282,28 +282,24 @@
       }
     },
     {
-      "userId": 2,
-      "id": 12,
-      "title": "in quibusdam tempore odit est dolorem",
-      "body": "itaque id aut magnam\npraesentium quia et ea odit et ea voluptas et\nsapiente quia nihil amet occaecati quia id voluptatem\nincidunt ea est distinctio odio"
+      "reactions": {
+        "thumbsUp": 22,
+        "wow": 14,
+        "heart": 4,
+        "rocket": 8,
+        "coffee": 7
+      },
+      "id": 14
     },
     {
-      "userId": 2,
-      "id": 13,
-      "title": "dolorum ut in voluptas mollitia et saepe quo animi",
-      "body": "aut dicta possimus sint mollitia voluptas commodi quo doloremque\niste corrupti reiciendis voluptatem eius rerum\nsit cumque quod eligendi laborum minima\nperferendis recusandae assumenda consectetur porro architecto ipsum ipsam"
-    },
-    {
-      "userId": 2,
-      "id": 14,
-      "title": "voluptatem eligendi optio",
-      "body": "fuga et accusamus dolorum perferendis illo voluptas\nnon doloremque neque facere\nad qui dolorum molestiae beatae\nsed aut voluptas totam sit illum"
-    },
-    {
-      "userId": 2,
-      "id": 15,
-      "title": "eveniet quod temporibus",
-      "body": "reprehenderit quos placeat\nvelit minima officia dolores impedit repudiandae molestiae nam\nvoluptas recusandae quis delectus\nofficiis harum fugiat vitae"
+      "reactions": {
+        "thumbsUp": 13,
+        "wow": 2,
+        "heart": 2,
+        "rocket": 3,
+        "coffee": 0
+      },
+      "id": 15
     },
     {
       "userId": 2,
