@@ -121,7 +121,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
 		addReaction: builder.mutation({
 			query: ({ postId, reactions }) => ({
 				url: `/posts/${postId}`,
-				method: 'PUT',
+				method: 'PATCH',
 				body: { reactions },
 			}),
 			async onQueryStarted(
